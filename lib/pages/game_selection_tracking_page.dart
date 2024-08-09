@@ -25,7 +25,7 @@ class _GameSelectionTrackingPageState extends State<GameSelectionTrackingPage> {
           children: [
             Text(
               'Game Selection',
-              style: Theme.of(context).textTheme.headline4?.copyWith(
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                 fontWeight: FontWeight.w600,
                 color: primaryAncient,
               ),
@@ -38,7 +38,7 @@ class _GameSelectionTrackingPageState extends State<GameSelectionTrackingPage> {
               icon: Icon(Icons.add, color: Colors.white),
               label: Text('Add Game', style: TextStyle(color: Colors.white)),
               style: ElevatedButton.styleFrom(
-                primary: primaryAncient,
+                backgroundColor: primaryAncient,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               ),
             ),
@@ -115,6 +115,7 @@ class _MotionTrackingWidgetState extends State<MotionTrackingWidget> {
   double sensitivity = 0.5;
 
   @override
+   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
@@ -125,7 +126,7 @@ class _MotionTrackingWidgetState extends State<MotionTrackingWidget> {
           children: [
             Text(
               'Motion Tracking',
-              style: Theme.of(context).textTheme.headline5?.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.w600,
                 color: primaryAncient,
               ),
@@ -157,7 +158,7 @@ class _MotionTrackingWidgetState extends State<MotionTrackingWidget> {
                     style: TextStyle(color: Colors.white),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: isTracking ? Colors.red : Colors.green,
+                    backgroundColor: isTracking ? Colors.red : Colors.green,
                   ),
                 ),
                 SizedBox(width: componentPadding),
@@ -202,7 +203,7 @@ class _MotionTrackingWidgetState extends State<MotionTrackingWidget> {
               ],
             ),
             SizedBox(height: componentPadding),
-            Text('Sensitivity', style: Theme.of(context).textTheme.subtitle1),
+            Text('Sensitivity', style: Theme.of(context).textTheme.titleMedium),
             Slider(
               value: sensitivity,
               onChanged: (newValue) => setState(() => sensitivity = newValue),

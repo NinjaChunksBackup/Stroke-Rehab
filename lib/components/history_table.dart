@@ -25,12 +25,12 @@ class OrderTable extends StatelessWidget {
     final List<DataColumn> columns =
         columnNames.map((e) => DataColumn(label: Text(e))).toList();
     final List<DataRow> rows = orders
-        .map((History) => DataRow(cells: [
+        .map((history) => DataRow(cells: [
               DataCell(Row(
                 children: [
                   Container(
                     child: Icon(
-                      History.icon,
+                      history.icon,
                       color: Theme.of(context).primaryColor,
                     ),
                     width: 42,
@@ -51,7 +51,7 @@ class OrderTable extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      History.name,
+                      history.name,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       style: TextStyle(
@@ -61,10 +61,10 @@ class OrderTable extends StatelessWidget {
                 ],
               )),
               DataCell(Text(
-                History.packs.toString() + ' Times',
+                '${history.packs} Times',
               )),
               DataCell(Text(
-                History.date,
+                history.date,
                 style: TextStyle(fontStyle: FontStyle.italic),
               )),
               DataCell(Container(
@@ -76,7 +76,7 @@ class OrderTable extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     child: Text(
-                      History.status,
+                      history.status,
                       style: TextStyle(
                           color: Theme.of(context).primaryColor, fontSize: 12),
                     ),

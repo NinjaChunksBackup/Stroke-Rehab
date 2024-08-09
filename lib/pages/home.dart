@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_responsive_dashboard/layout/main_layout.dart';
 import 'package:store_responsive_dashboard/constaints.dart';
-import 'package:store_responsive_dashboard/model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,7 +20,7 @@ class HomePage extends StatelessWidget {
           children: [
             Text(
               'Welcome to Your Stroke Rehab App',
-              style: Theme.of(context).textTheme.headline4?.copyWith(
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: primaryAncient,
               ),
