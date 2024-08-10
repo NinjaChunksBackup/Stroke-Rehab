@@ -3,7 +3,12 @@ import 'package:store_responsive_dashboard/layout/main_layout.dart';
 import 'package:store_responsive_dashboard/constaints.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final List<String> sliderItems = [
     'Welcome back! Ready for today\'s exercises?',
     'Remember to stay hydrated during your sessions.',
@@ -48,7 +53,6 @@ class HomePage extends StatelessWidget {
         autoPlay: true,
         enlargeCenterPage: true,
         viewportFraction: 0.9,
-        aspectRatio: 2.0,
       ),
       items: sliderItems.map((item) {
         return Builder(
@@ -148,11 +152,11 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  _buildGameItem('Pottery', 'assets/pottery_icon.png'),
-                  _buildGameItem('Ball Catcher', 'assets/ball_catcher_icon.png'),
-                  _buildGameItem('Memory Match', 'assets/memory_match_icon.png'),
-                  _buildGameItem('Reaction Time', 'assets/reaction_time_icon.png'),
-                  _buildGameItem('Balance Board', 'assets/balance_board_icon.png'),
+                  _buildGameItem('Pottery'),
+                  _buildGameItem('Ball Catcher'),
+                  _buildGameItem('Memory Match'),
+                  _buildGameItem('Reaction Time'),
+                  _buildGameItem('Balance Board'),
                 ],
               ),
             ),
@@ -162,20 +166,24 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildGameItem(String name, String imagePath) {
+  Widget _buildGameItem(String name) {
     return Container(
       width: 100,
       margin: EdgeInsets.only(right: 16),
       child: Column(
         children: [
-          Image.asset(imagePath, width: 64, height: 64),
+          Container(
+            width: 64,
+            height: 64,
+            color: Colors.grey[300],
+            child: Icon(Icons.games, color: Colors.grey[600]),
+          ),
           SizedBox(height: 8),
           Text(name, style: TextStyle(fontSize: 14), textAlign: TextAlign.center),
         ],
       ),
     );
   }
-
 
   Widget _buildDailyTip() {
     return Card(
